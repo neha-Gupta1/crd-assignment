@@ -1,0 +1,50 @@
+Chapter 1
+Which controller is responsible for scheduling a pod on a node?
+- kube-scheduler
+Arrange in sequence all controllers that play a role in launching a pod via a deployment?
+- deployment -> replicaset -> kube-scheduler -> kubelet
+How does kuberentes API handles two concurrent writes to update a cluster object?
+- Accept first write, rejects second. Controller must retry / handle conflicts
+
+Chapter 2
+Which command will you use to proxy Kubernetes APIs on local machine?
+- kubectl
+
+How do you get the supported API Versions on a kubernetes cluster?
+- kubectl api-versions
+
+How do you get supported API Resources on a kubernetes cluster?
+- kubectl api-resources
+
+Find out the GVR for Deployment.
+- we can find info from- https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/deployment-v1/
+ Group- app
+ Version- v1
+ resource- deployment
+
+Find out GVR for pod-
+ Group - core
+ Version - v1
+ Resources- pods
+
+Find out GVR for cronjobs
+- kubectl get cronjobs -v 6
+  Group- batch
+  Version- v1
+  Resource-cronjobs
+
+ServiceAccount is a non-namespaced resource -false
+- false
+  kubectl api-resources | grep serviceaccounts
+
+Namespace is a 
+- non-namespaced resource
+
+Which of the following statements are true about GVK
+- A Kind can be part of more than one groupversions simultaneously, and can be retrieved as representation of any of those groupversions for a cluster
+
+In API Server response processing, which of the following is true?
+- Validating Admission Webhooks come before mutating webhooks
+
+API Server persists the state of various objects in etcd always
+- Replacing it is possible using - https://martinheinz.dev/blog/100 Not sure how main stream it is till now.
